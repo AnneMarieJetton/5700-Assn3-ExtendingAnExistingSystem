@@ -49,20 +49,29 @@ class TestRunner private constructor(){
             var file = File("shapes.txt")
 
             file.forEachLine {
-                var splitLine = it.split(",")
+                var splitLine = it.split(",").toMutableList()
+
+                var shapeType = splitLine[0]
+                splitLine.removeAt(0)
+
+
+                var radii = mutableListOf<Double>()
+                if (splitLine[0] == "circle" || splitLine[0] == "ellipse"){
+                    radii.add(splitLine[1].toDouble())
+                    radii.add(splitLine[2].toDouble())
+                    splitLine.removeAt(0)
+                    splitLine.removeAt(0)
+                }
 
                 var points = makePoints(splitLine.toMutableList())
 
-                if (compositeDictionary.containsKey(splitLine[0])) {
-                    var shapes = compositeDictionary[splitLine[0]]!!.makeShape(points)
+                if (compositeDictionary.containsKey(shapeType)) {
+                    var shapes = compositeDictionary[shapeType]!!.makeShape(points, radii)
                     var newShape = CompositeShape(shapes, points)
-//                    var newShape = shapes?.let { it1 -> CompositeShape(it1, points) }
                     addQuestion(Question(newShape))
-//                    newShape?.let { it1 -> Question(it1) }?.let { it2 -> addQuestion(it2) }
                 }
-                else if(shapeDictionary.containsKey(splitLine[0])) {
-                    var newShape = shapeDictionary[splitLine[0]]!!.makeShape(points)
-//                    addQuestion(Question(shapes[0]))
+                else if(shapeDictionary.containsKey(shapeType)) {
+                    var newShape = shapeDictionary[shapeType]!!.makeShape(points, radii)
                     addQuestion(Question(newShape[0]))
                 }
                 else {
@@ -73,7 +82,7 @@ class TestRunner private constructor(){
 
         fun makePoints(splitLine: MutableList<String>): MutableList<Point> {
             var points = mutableListOf<Point>()
-            splitLine.removeAt(0)
+//            splitLine.removeAt(0)
 
             var builder = mutableListOf<Number>()
             for (number in splitLine){
