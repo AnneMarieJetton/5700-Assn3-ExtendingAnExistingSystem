@@ -7,7 +7,7 @@ import Shape
 
 class MakeRectangle(): CompositeStrategy {
 
-    override fun makeShape(points: MutableList<Point>): MutableList<Shape> {
+    override fun makeShape(points: MutableList<Point>, radii: MutableList<Double>): MutableList<Shape> {
         var shapes = mutableListOf<Shape>()
         shapes.add(Rectangle(points.subList(0, 2)))
         return shapes

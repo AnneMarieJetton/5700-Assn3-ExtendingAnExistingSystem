@@ -7,7 +7,7 @@ import Shape
 
 class MakeNPointStar(): CompositeStrategy {
 
-    override fun makeShape(points: MutableList<Point>): MutableList<Shape> {
+    override fun makeShape(points: MutableList<Point>, radii: MutableList<Double>): MutableList<Shape> {
         var shapes = mutableListOf<Shape>()
 
         var builder = mutableListOf<Point>()
