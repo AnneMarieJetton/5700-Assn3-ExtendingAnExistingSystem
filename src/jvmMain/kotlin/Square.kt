@@ -15,4 +15,7 @@ class Square(_points: MutableList<Point>): Rectangle(_points) {
         return true
     }
 
+    override fun getShapeType(): String {
+        return "Square"
+    }
 }

@@ -2,29 +2,20 @@ package Strategies
 
 import CompositeStrategy
 import Line
+import NPointStar
 import Point
 import Shape
 
 class MakeNPointStar(): CompositeStrategy {
 
-    override fun makeShape(points: MutableList<Point>, radii: MutableList<Double>): MutableList<Shape> {
-        var shapes = mutableListOf<Shape>()
+    override fun makeShape(shapeInfo: MutableList<String>): Shape {
 
-        var builder = mutableListOf<Point>()
-        for (point in points){
-            if (builder.size == 0){
-                builder.add(point)
-            }
-            else{
-                builder.add(point)
-                shapes.add(Line(builder))
-                builder.clear()
-            }
-        }
+        var type = shapeInfo[0]
+        shapeInfo.removeAt(0)
 
-        //check here for incorrect number of points?
+        var points = getPoints(shapeInfo)
 
-        return shapes
+        return NPointStar(points)
     }
 
 }

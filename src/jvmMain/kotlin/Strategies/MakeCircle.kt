@@ -7,10 +7,18 @@ import Shape
 
 class MakeCircle(): CompositeStrategy {
 
-    override fun makeShape(points: MutableList<Point>, radii: MutableList<Double>): MutableList<Shape> {
-        var shapes = mutableListOf<Shape>()
-        shapes.add(Circle(points.subList(0, 2), radii))
-        return shapes
+    override fun makeShape(shapeInfo: MutableList<String>): Shape {
+
+        var type = shapeInfo[0]
+        shapeInfo.removeAt(0)
+
+        var radii = getRadii(shapeInfo)
+        shapeInfo.removeAt(0)
+        shapeInfo.removeAt(0)
+
+        var points = getPoints(shapeInfo)
+
+        return Circle(points, radii)
     }
 
 }

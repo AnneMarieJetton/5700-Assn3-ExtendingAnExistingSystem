@@ -18,4 +18,8 @@ class Circle(_points: MutableList<Point>, _radii: MutableList<Double>): Ellipse(
         return true
     }
 
+    override fun getShapeType(): String {
+        return "Circle"
+    }
+
 }

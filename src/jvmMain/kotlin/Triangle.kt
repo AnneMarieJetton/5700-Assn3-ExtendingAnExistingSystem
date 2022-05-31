@@ -17,7 +17,7 @@ class Triangle(points: MutableList<Point>): Shape(points) {
         return true
     }
 
-    fun getArea(): Double {
+    override fun getArea(): Double {
         val side1 = sqrt((points[1].x - points[0].x).pow(2) + (points[1].y - points[0].y).pow(2))
         val side2 = sqrt((points[2].x - points[1].x).pow(2) + (points[2].y - points[1].y).pow(2))
         val side3 = sqrt((points[0].x - points[2].x).pow(2) + (points[0].y - points[2].y).pow(2))
@@ -32,6 +32,10 @@ class Triangle(points: MutableList<Point>): Shape(points) {
             return false
         }
         return true
+    }
+
+    override fun getShapeType(): String {
+        return "Triangle"
     }
 
 }

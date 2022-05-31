@@ -1,25 +1,22 @@
 package Strategies
 
+import CompositeShape
 import CompositeStrategy
-import Ellipse
-import Point
 import Shape
+import ShapeFactory
 
-
-class MakeEllipse(): CompositeStrategy {
+class MakeCompositeShape(): CompositeStrategy {
 
     override fun makeShape(shapeInfo: MutableList<String>): Shape {
+        var shapes = ShapeFactory.createShapes(shapeInfo)
 
-        var type = shapeInfo[0]
         shapeInfo.removeAt(0)
-
-        var radii = getRadii(shapeInfo)
         shapeInfo.removeAt(0)
         shapeInfo.removeAt(0)
 
         var points = getPoints(shapeInfo)
 
-        return Ellipse(points, radii)
+        return CompositeShape(shapes, points)
     }
 
 }

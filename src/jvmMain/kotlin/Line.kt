@@ -32,4 +32,12 @@ class Line(_points: MutableList<Point>): Shape(_points) {
         return true
     }
 
+    override fun getArea(): Double {
+        return getLength()
+    }
+
+    override fun getShapeType(): String {
+        return "Line"
+    }
+
 }

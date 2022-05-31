@@ -7,7 +7,7 @@ open class Rectangle(_points: MutableList<Point>): Shape(_points) {
         require(checkListSize(), { "Error: must have 2 points" })
     }
 
-    fun getArea(): Double {
+    override fun getArea(): Double {
         return getWidth() * getHeight()
     }
 
@@ -31,6 +31,10 @@ open class Rectangle(_points: MutableList<Point>): Shape(_points) {
             return false
         }
         return true
+    }
+
+    override fun getShapeType(): String {
+        return "Rectangle"
     }
 
 }

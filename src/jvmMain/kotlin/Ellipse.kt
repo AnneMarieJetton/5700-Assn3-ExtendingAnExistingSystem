@@ -6,7 +6,7 @@ open class Ellipse(_points: MutableList<Point>, _radii: MutableList<Double>): Sh
         require(checkListSize(), { "Error: must have one point and 2 radii" })
     }
 
-    fun getArea(): Double {
+    override fun getArea(): Double {
         return Math.PI * radii[0] * radii[1]
     }
 
@@ -22,6 +22,10 @@ open class Ellipse(_points: MutableList<Point>, _radii: MutableList<Double>): Sh
             return false
         }
         return true
+    }
+
+    override fun getShapeType(): String {
+        return "Ellipse"
     }
 
 }

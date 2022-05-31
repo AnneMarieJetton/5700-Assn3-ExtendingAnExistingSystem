@@ -8,4 +8,8 @@ open abstract class Shape (_points: MutableList<Point>){
         }
     }
 
+    abstract fun getArea(): Double
+
+    abstract fun getShapeType(): String
+
 }

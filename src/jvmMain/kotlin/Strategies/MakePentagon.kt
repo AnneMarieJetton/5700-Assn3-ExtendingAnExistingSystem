@@ -7,10 +7,14 @@ import Shape
 
 class MakePentagon(): CompositeStrategy {
 
-    override fun makeShape(points: MutableList<Point>, radii: MutableList<Double>): MutableList<Shape> {
-        var shapes = mutableListOf<Shape>()
-        shapes.add(Pentagon(points.subList(0, 2)))
-        return shapes
+    override fun makeShape(shapeInfo: MutableList<String>): Shape {
+
+        var type = shapeInfo[0]
+        shapeInfo.removeAt(0)
+
+        var points = getPoints(shapeInfo)
+
+        return Pentagon(points)
     }
 
 }
