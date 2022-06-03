@@ -18,4 +18,8 @@ class Square(_points: MutableList<Point>): Rectangle(_points) {
     override fun getShapeType(): String {
         return "Square"
     }
+
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
 }

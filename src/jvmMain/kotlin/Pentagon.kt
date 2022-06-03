@@ -22,4 +22,8 @@ class Pentagon (_points: MutableList<Point>): Shape(_points) {
         return area
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
+
 }

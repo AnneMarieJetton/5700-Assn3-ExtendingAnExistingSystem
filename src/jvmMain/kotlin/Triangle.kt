@@ -38,4 +38,8 @@ class Triangle(points: MutableList<Point>): Shape(points) {
         return "Triangle"
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
+
 }

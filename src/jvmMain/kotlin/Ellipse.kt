@@ -23,9 +23,12 @@ open class Ellipse(_points: MutableList<Point>, _radii: MutableList<Double>): Sh
         }
         return true
     }
-
     override fun getShapeType(): String {
         return "Ellipse"
+    }
+
+    override fun getRadiiList(): MutableList<Double>? {
+        return radii
     }
 
 }

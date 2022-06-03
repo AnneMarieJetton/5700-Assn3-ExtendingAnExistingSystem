@@ -40,4 +40,8 @@ class Line(_points: MutableList<Point>): Shape(_points) {
         return "Line"
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
+
 }

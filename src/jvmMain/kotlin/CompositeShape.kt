@@ -24,4 +24,8 @@ class CompositeShape(_shapes: MutableList<Shape>, _points: MutableList<Point>): 
         return "Composite"
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
+
 }

@@ -30,4 +30,8 @@ class NPointStar(_points: MutableList<Point>): Shape(_points) {
             }
         }
     }
+
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
 }

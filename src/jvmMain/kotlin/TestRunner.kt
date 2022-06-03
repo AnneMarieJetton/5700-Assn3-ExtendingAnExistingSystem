@@ -26,7 +26,7 @@ class TestRunner private constructor(){
 //                "trianglePentagon" to trianglePentagon,
 //                "triangleRectangle" to triangleRectangle,
 //            )
-//
+
             val makeCircle = MakeCircle()
             val makeEllipse = MakeEllipse()
             val makeLine = MakeLine()
@@ -52,7 +52,7 @@ class TestRunner private constructor(){
 
             file.forEachLine {
                 var splitLine = it.split(",").toMutableList()
-                
+
                 if (shapeDictionary.containsKey(splitLine[0])){
                     addQuestion(Question( shapeDictionary[splitLine[0]]!!.makeShape(splitLine)))
                 }

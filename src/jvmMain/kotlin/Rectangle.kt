@@ -37,4 +37,8 @@ open class Rectangle(_points: MutableList<Point>): Shape(_points) {
         return "Rectangle"
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return null
+    }
+
 }

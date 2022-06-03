@@ -12,4 +12,6 @@ open abstract class Shape (_points: MutableList<Point>){
 
     abstract fun getShapeType(): String
 
+    abstract fun getRadiiList(): MutableList<Double>?
+
 }

@@ -22,4 +22,8 @@ class Circle(_points: MutableList<Point>, _radii: MutableList<Double>): Ellipse(
         return "Circle"
     }
 
+    override fun getRadiiList(): MutableList<Double>? {
+        return radii
+    }
+
 }
