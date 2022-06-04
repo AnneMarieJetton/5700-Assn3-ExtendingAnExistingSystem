@@ -11,6 +11,18 @@ class Question(_shape: Shape) {
     var qString: String = ""
     var aString: String = ""
 
+    init {
+        createPointsAndRadiiString()
+        if (shape.getShapeType() == "Circle" || shape.getShapeType() == "Ellipse") {
+            rand = Random.nextInt(4, 7)
+        }
+        else{
+            rand = Random.nextInt(1, 4)
+        }
+//        qString = questionDictionary[rand].toString()
+//        aString = answerDictionary[rand].toString()
+    }
+
     val questionDictionary = mapOf<Int, String>(
         1 to "A " + shape.getShapeType() + "has the points " + pointString + ". What is the area of the " + shape.getShapeType() + " ?",
         2 to "A " + shape.getShapeType() + "has the points " + pointString + ". What is half of the area of the " + shape.getShapeType() + " ?",
@@ -30,13 +42,6 @@ class Question(_shape: Shape) {
     )
 
     init {
-        createPointsAndRadiiString()
-        if (shape.getShapeType() == "Circle" || shape.getShapeType() == "Ellipse") {
-            rand = Random.nextInt(4, 7)
-        }
-        else{
-            rand = Random.nextInt(1, 4)
-        }
         qString = questionDictionary[rand].toString()
         aString = answerDictionary[rand].toString()
     }
