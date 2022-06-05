@@ -45,7 +45,7 @@ fun TestView(callback: () -> Unit){
     var questionNum by remember { mutableStateOf(0) }
     var textFieldInput by remember { mutableStateOf("") }
 
-    println(questions.size)
+//    println(questions.size)
 
     Column {
         Text(

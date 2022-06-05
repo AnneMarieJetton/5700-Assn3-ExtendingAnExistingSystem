@@ -24,8 +24,8 @@ interface CompositeStrategy {
 
     fun getRadii(shapeInfo: MutableList<String>): MutableList<Double> {
         var radii = mutableListOf<Double>()
+        radii.add(shapeInfo[0].toDouble())
         radii.add(shapeInfo[1].toDouble())
-        radii.add(shapeInfo[2].toDouble())
         return radii
     }
 

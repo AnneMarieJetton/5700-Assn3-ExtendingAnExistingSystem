@@ -24,12 +24,12 @@ class Question(_shape: Shape) {
     }
 
     val questionDictionary = mapOf<Int, String>(
-        1 to "A " + shape.getShapeType() + "has the points " + pointString + ". What is the area of the " + shape.getShapeType() + " ?",
-        2 to "A " + shape.getShapeType() + "has the points " + pointString + ". What is half of the area of the " + shape.getShapeType() + " ?",
-        3 to "A " + shape.getShapeType() + "has the points " + pointString + ". What is 3 times the area of the " + shape.getShapeType() + " ?",
-        4 to "A " + shape.getShapeType() + "has the points " + pointString + "and radii " + radiiString + ". What is the area of the " + shape.getShapeType() + " ?",
-        5 to "A " + shape.getShapeType() + "has the points " + pointString + "and radii " + radiiString + ". What is half of the area of the " + shape.getShapeType() + " ?",
-        6 to "A " + shape.getShapeType() + "has the points " + pointString + "and radii " + radiiString + ". What is 4 times the area of the " + shape.getShapeType() + " ?",
+        1 to "A " + shape.getShapeType() + " has the points " + pointString + ". What is the area of the " + shape.getShapeType() + " ?",
+        2 to "A " + shape.getShapeType() + " has the points " + pointString + ". What is half of the area of the " + shape.getShapeType() + " ?",
+        3 to "A " + shape.getShapeType() + " has the points " + pointString + ". What is 3 times the area of the " + shape.getShapeType() + " ?",
+        4 to "A " + shape.getShapeType() + " has the point " + pointString + " and radii " + radiiString + ". What is the area of the " + shape.getShapeType() + " ?",
+        5 to "A " + shape.getShapeType() + " has the point " + pointString + " and radii " + radiiString + ". What is half of the area of the " + shape.getShapeType() + " ?",
+        6 to "A " + shape.getShapeType() + " has the point " + pointString + " and radii " + radiiString + ". What is 4 times the area of the " + shape.getShapeType() + " ?",
     )
 
     val answerDictionary = mapOf<Int, String>(
@@ -48,12 +48,24 @@ class Question(_shape: Shape) {
 
     private fun createPointsAndRadiiString(){
         for(point in shape.points) {
-            pointString = pointString + "(" + point.x + "," + point.y + "), "
+            pointString = pointString + "(" + point.x + "," + point.y + ")"
+            if (point != shape.points[shape.points.size - 1]){
+                pointString = pointString + ", "
+            }
         }
 
         if(shape.getShapeType() == "Circle" || shape.getShapeType() == "Ellipse"){
             for(radius in shape.getRadiiList()!!){
-                radiiString = radiiString + radius + ", "
+                radiiString = radiiString + radius.toInt() + " "
+//                var commaAdded = false
+//                if (!commaAdded){
+//                    commaAdded = true
+//                    radiiString = radiiString + ", and "
+//                }
+
+//                if (radius != shape.getRadiiList()!![shape.getRadiiList()!!.size]){
+//                    pointString = pointString + ", "
+//                }
             }
         }
     }
