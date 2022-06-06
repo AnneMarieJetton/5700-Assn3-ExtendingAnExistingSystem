@@ -26,3 +26,17 @@ A Line has the points (0.0,0.0), (1.0,1.0). What is half of the area of the Line
 osirn;aojfnv
 A Pentagon has the points (3.0,6.0), (5.0,5.0), (4.0,3.0), (2.0,3.0), (1.0,5.0). What is 3 times the area of the Pentagon ?
 osirn;aojfnv
+A Square has the points (0.0,0.0), (2.0,2.0). What is the area of the Square ?
+
+A Rectangle has the points (0.0,0.0), (2.0,1.0). What is the area of the Rectangle ?
+
+A Ellipse has the point (0.0,0.0) and radii 1 2 . What is half of the area of the Ellipse ?
+
+A Circle has the point (0.0,0.0) and radii 1 1 . What is 4 times the area of the Circle ?
+
+A Triangle has the points (0.0,0.0), (1.0,0.0), (1.0,1.0). What is the area of the Triangle ?
+
+A Line has the points (0.0,0.0), (1.0,1.0). What is half of the area of the Line ?
+
+A Pentagon has the points (3.0,6.0), (5.0,5.0), (4.0,3.0), (2.0,3.0), (1.0,5.0). What is 3 times the area of the Pentagon ?
+
