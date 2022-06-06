@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import java.io.FileWriter
 
 @Composable
 @Preview
@@ -62,6 +63,11 @@ fun TestView(callback: () -> Unit){
                     callback.invoke()
                 }
                 else{
+//                    csv & text file
+                    //write current question to file
+                    //write student answer to file
+                    //write real answer to different file
+                    writeToFiles(questions[questionNum].qString, textFieldInput, questions[questionNum].aString)
                     questionNum = questionNum + 1
                 }
             }) {
@@ -78,3 +84,20 @@ fun main() {
         }
     }
 }
+
+fun writeToFiles(question: String, answer: String, trueAnswer: String){
+    try {
+        var textFile = FileWriter("test.txt",true)
+        var CSVFile = FileWriter("TestAnswers.csv", true)
+        textFile.write(question + "\n")
+        textFile.write(answer + "\n")
+        textFile.close()
+        CSVFile.write(trueAnswer + "\n")
+        CSVFile.close()
+    }catch(ex:Exception){
+        print(ex.message)
+    }
+
+
+}
+
